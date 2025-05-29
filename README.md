@@ -1,76 +1,147 @@
-<h1 align="center">EMCP Baseline NestJS Backend</h1>
+EMCP Baseline NestJS Backend
 
-<p align="center">
-  A production‑ready NestJS backend service with Docker, Docker Compose, Helm chart support, and GitHub Actions CI/CD.
-</p>
+A production‑ready NestJS backend service with Docker, Docker Compose
 
-## Description
+Description
+-----------
 
 This project is a baseline NestJS backend service designed for cloud‑native environments. It provides a solid starting point that includes:
-- A modular, TypeScript‑based NestJS server
-- Docker and Docker Compose configuration for local development
-- Helm charts for Kubernetes deployment
-- GitHub Actions workflows for continuous integration and deployment
 
-## Prerequisites
+*   A modular, TypeScript‑based NestJS server
+    
+*   Docker and Docker Compose configuration for local development
+    
 
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [Docker](https://www.docker.com/)
-- [Helm](https://helm.sh/)
-- A Kubernetes cluster (for production deployments)
+Prerequisites
+-------------
 
-## Project Setup
+*   [Node.js](https://nodejs.org/) (v18 or higher recommended)
+    
+*   [Docker](https://www.docker.com/)
+    
+*   [Docker Compose](https://docs.docker.com/compose/)
+    
 
-Clone the repository and install dependencies:
+Developer Home Test 🚀
+----------------------
 
-```shell
-# Clone the repository (if using the GitHub template, click "Use this template" from the repo page)
-git clone https://github.com/enclaive/skele-type.git
-cd skele-type/server
-npm install
-# Running the application
-# Development mode with auto-reload
-npm run start:dev
-# Production mode
-npm run start
-# Lint and autofix with ESLint
-npm run lint
-# Format code with Prettier
-npm run format
-```
+**Welcome new developers!** Complete this ping-pong service challenge to demonstrate your understanding of the tech stack.
 
-## Replacing Placeholders
+### Challenge Overview
 
-This template uses placeholders (e.g., `{{service-name}}` and `{{namespace}}`) in various configuration files (such as Kubernetes manifests and Helm charts). To customize the template for your project:
+Build a real-time ping-pong service that demonstrates:
 
-* **Search for `{{service-name}}`:**
-    Replace every instance of `{{service-name}}` with the actual name of your service (for example, `orders-api`, `backend`, etc.).
-* **Search for `{{namespace}}`:**
-    Replace `{{namespace}}` with the target Kubernetes namespace (for example, `emcp-staging`, `emcp-prod`, etc.).
-* **Helm Integration:**
-    If using Helm, these placeholders can be replaced dynamically via the `values.yaml` file. For example, use `{{ .Values.serviceName }}` in your templates and define `serviceName` in your Helm values file.
+*   RESTful API endpoints
+    
+*   Redis streams for message queuing
+    
+*   WebSocket connections for real-time communication
+    
+*   Client-side real-time updates
+    
 
-## GitHub Template Repository
+### Requirements
 
-This repository is designed to be used as a GitHub template:
+#### Backend Implementation
 
-1.  **Using the Template:**
-    On GitHub, click the “Use this template” button on the repository’s main page. This will create a new repository with the same structure.
-2.  **Customization:**
-    After creating your new repository, update configuration files and replace all placeholders with values specific to your project.
-3.  **Benefits:**
-    This approach provides a consistent starting point across multiple projects and simplifies setup by pre-configuring CI/CD, Docker, and Helm deployments.
+1.  **Ping Endpoint**: Create a POST endpoint /api/ping that:
+    
+    *   Accepts a "ping" message from clients
+        
+    *   Writes the message to a Redis stream
+        
+    *   Returns acknowledgment to the client
+        
+2.  **Redis Stream Processing**: Implement a background service that:
+    
+    *   Listens to the Redis stream for new ping messages
+        
+    *   Processes each message and transforms it to "pong"
+        
+    *   Broadcasts the "pong" message to all connected WebSocket clients
+        
+3.  **WebSocket Gateway**: Create a WebSocket gateway that:
+    
+    *   Accepts client connections
+        
+    *   Broadcasts "pong" messages to all connected clients
+        
+    *   Handles client connect/disconnect events
+        
 
-## Deployment
+#### Frontend Implementation
 
-### Docker and Docker Compose
+1.  **Client Application**: Build a simple client (React preferred) that:
+    
+    *   Has a button to send "ping" requests to the server
+        
+    *   Connects to the WebSocket to receive "pong" messages
+        
+    *   Displays received "pong" messages in real-time
+        
+    
 
-This repository includes a `Dockerfile` in the `docker/server` directory and a `docker-compose.yml` file at the root.
+### Technical Requirements
 
-* **Dockerfile:**
-    Located in `docker/server/Dockerfile`, it builds the NestJS service image.
-* **Docker Compose:**
-    Use the following command to build and run the service along with its dependencies:
-```shell
-docker-compose up --build
-```
+*   **Local Development Only**: No need for multi-node considerations
+    
+*   **Docker Compose**: All services must run via docker-compose up
+    
+*   **Dependencies**: Include Redis in your docker-compose setup
+    
+*   **Real-time**: Use WebSockets for client-server communication
+    
+*   **Message Queue**: Use Redis streams (not pub/sub)
+    
+
+### Evaluation Criteria
+
+*   ✅ Code quality and organization
+    
+*   ✅ Proper error handling
+    
+*   ✅ Docker setup works out of the box
+    
+*   ✅ Real-time functionality works as described
+    
+*   ✅ Clean and intuitive client interface
+    
+*   ✅ Documentation and comments
+    
+
+### Deliverables
+
+1.  Updated NestJS backend with ping-pong service
+    
+2.  Client application (React or any framework)
+    
+3.  Updated docker-compose.yml with Redis
+    
+4.  Brief documentation explaining your implementation choices
+    
+
+Contributing
+------------
+
+1.  Clone the repository
+    
+2.  Create a feature branch (git checkout -b feature/first-last-name-home-task)
+    
+3.  Commit your changes (git commit -m 'Add some amazing feature')
+    
+4.  Push to the branch (git push origin feature/amazing-feature)
+    
+5.  Open a Pull Request
+    
+
+Support
+-------
+
+If you encounter issues during the home test or have questions about the setup, please:
+
+1.  Email - itzhak@enclaive.com
+    
+2. Feel free to use any AI, but do not share the entire repo with AI
+    
+
+**Good luck with the home test! Happy hacking 🎯**
