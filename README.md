@@ -120,7 +120,7 @@ Build a real-time ping-pong service that demonstrates:
 4.  Brief documentation explaining your implementation choices
     
 
-Contributing
+Submission
 ------------
 
 1.  Clone the repository
@@ -132,6 +132,8 @@ Contributing
 4.  Push to the branch (git push origin feature/amazing-feature)
     
 5.  Open a Pull Request
+
+6.  Send an email - itzhak@enclaive.io with a link to your PR
     
 
 Support
@@ -139,7 +141,7 @@ Support
 
 If you encounter issues during the home test or have questions about the setup, please:
 
-1.  Email - itzhak@enclaive.com
+1.  Email - itzhak@enclaive.io
     
 2. Feel free to use any AI, but do not share the entire repo with AI
     
