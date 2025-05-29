@@ -123,17 +123,13 @@ Build a real-time ping-pong service that demonstrates:
 Submission
 ------------
 
-1.  Clone the repository
+1.  Click on "Use this template" to create a new repository
     
-2.  Create a feature branch (git checkout -b feature/first-last-name-home-task)
+3.  Commit your changes 
     
-3.  Commit your changes (git commit -m 'Add some amazing feature')
-    
-4.  Push to the branch (git push origin feature/amazing-feature)
-    
-5.  Open a Pull Request
+4.  Push your changes to your new repository
 
-6.  Send an email - itzhak@enclaive.io with a link to your PR
+6.  Send an email - itzhak@enclaive.io with a link
     
 
 Support
