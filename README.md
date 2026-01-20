@@ -89,7 +89,7 @@ Build a real-time ping-pong service that demonstrates:
     
 *   **Dependencies**: Include Redis in your docker-compose setup
     
-*   **Real-time**: Use WebSockets for client-server communication
+*   **Real-time**: Use WebSockets for server PONG messages
     
 *   **Message Queue**: Use Redis streams (not pub/sub)
     
